@@ -3,164 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bebu 💕 Be My Valentine</title>
+<title>Bebu 💕 Appointment Letter</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #ff4d6d, #ff85a1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: white;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .container {
-        background: rgba(255,255,255,0.15);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        max-width: 360px;
-        width: 90%;
-        position: relative;
-    }
-
-    h1 {
-        font-size: 2.2em;
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 1.1em;
-        margin-bottom: 30px;
-    }
-
-    button {
-        padding: 15px 28px;
-        font-size: 1.1em;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-    }
-
-    .yes {
-        background: #ff1e56;
-        color: white;
-    }
-
-    .yes:hover {
-        transform: scale(1.1);
-    }
-
-    .no {
-        background: white;
-        color: #ff1e56;
-        position: absolute;
-    }
-
-    .quote {
-        margin-top: 25px;
-        font-size: 1.2em;
-        font-style: italic;
-        min-height: 60px;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .heart {
-        font-size: 120px;
-        animation: beat 1s infinite;
-    }
-
-    @keyframes beat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.25); }
-    }
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff4d6d,#ff85a1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+  text-align:center;
+  overflow:hidden;
+}
+.container{
+  background:rgba(255,255,255,0.15);
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  max-width:400px;
+  width:95%;
+  position:relative;
+}
+h1{font-size:2.2em;}
+p{font-size:1.05em;margin-bottom:20px;}
+button{
+  padding:15px 28px;
+  font-size:1.1em;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  position:relative;
+}
+.yes{
+  background:#ff1e56;
+  color:white;
+}
+.yes:hover{transform:scale(1.15);}
+.no{
+  background:white;
+  color:#ff1e56;
+  position:absolute;
+}
+.quote{
+  margin-top:20px;
+  font-size:1.1em;
+  font-style:italic;
+  min-height:110px;
+}
+.hidden{display:none;}
+.heart{
+  font-size:90px;
+  animation:beat 1s infinite;
+}
+@keyframes beat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.25)}
+}
+.letter{
+  text-align:left;
+  font-size:0.95em;
+  line-height:1.6;
+  background:rgba(255,255,255,0.2);
+  padding:25px;
+  border-radius:15px;
+}
+.signature{
+  margin-top:20px;
+  font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
+<!-- SOUNDS -->
 <audio id="bgMusic" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3">
+</audio>
+
+<audio id="noSound">
+  <source src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
+</audio>
+
+<audio id="yesSound">
+  <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3">
 </audio>
 
 <div class="container" id="proposal">
-    <h1>Sanskriti 💕</h1>
-    <p>Will you be my Valentine, Bebu? 🌸</p>
+  <h1>Sanskriti 💕</h1>
+  <p>Bebu, will you be my Valentine? 💼❤️</p>
 
-    <button class="yes" onclick="yesClicked()">Yes 💖</button>
-    <button class="no" id="noBtn" onclick="noClicked()">No 🙈</button>
+  <button class="yes" onclick="yesClicked()">Yes 💖</button>
+  <button class="no" id="noBtn" onclick="noClicked()">No 🙈</button>
 
-    <div class="quote" id="quote"></div>
+  <div class="quote" id="quote"></div>
 </div>
 
-<div class="container hidden" id="loveScreen">
-    <div class="heart">❤️</div>
-    <h1>I LOVE YOU BEBU</h1>
-    <p>Forever & always 💘</p>
+<div class="container hidden" id="offerLetter">
+  <div class="heart">❤️</div>
+  <h1>APPOINTMENT LETTER</h1>
+
+  <div class="letter">
+    <p><strong>Dear Sanskriti (Bebu),</strong></p>
+
+    <p>
+      We are delighted to inform you that after multiple rounds of
+      interviews, emotional escalations, and stakeholder approvals,
+      you have been <strong>successfully selected</strong> for the role of:
+    </p>
+
+    <p><strong>💖 Valentine & Lifetime Partner 💖</strong></p>
+
+    <p>
+      <strong>Date of Joining:</strong> Immediate <br>
+      <strong>Location:</strong> Wherever you are <br>
+      <strong>CTC:</strong> Unlimited love, care & snacks 🍫
+    </p>
+
+    <p>
+      Please note: There is <strong>no notice period</strong>,
+      frequent hugs are mandatory,
+      and arguments must be resolved with food.
+    </p>
+
+    <p>
+      Kindly click “YES” daily to continue employment 😌
+    </p>
+
+    <p class="signature">
+      Warm regards,<br>
+      CEO – Dil & Dimaag ❤️<br>
+      (Your Valentine)
+    </p>
+  </div>
 </div>
 
 <script>
-    const quotes = [
-        "Acha… NO dabaya? Ek baar meri baat sun lo 🥺",
-        "Filmon mein heroine pehle mana karti hai 😏",
-        "Tumhaari muskaan ke liye thoda drama toh banta hai ❤️",
-        "Main perfect nahi hoon, par pyaar pura karta hoon 💕",
-        "Bebu… tumhaara ek YES meri poori duniya hai 🌍",
-        "Bas kar pagli… rulaayegi kya? 🥺💔",
-        "Tumhe manaane ka haq sirf mujhe hai 😌",
-        "Bas ek baar haan bol do… phir kabhi nahi poochunga 💖",
-        "Picture ka climax aa gaya hai 🎬❤️",
-        "Ab NO ka option officially bandh 😍"
-    ];
+const quotes = [
+  "NO clicked? Please attach business justification 😏",
+  "As per policy, NO requires 3-level approval 💼",
+  "HR has rejected this NO 😜",
+  "This NO does not align with company vision 😌",
+  "Stakeholders strongly disagree with this decision 📊",
+  "Your NO is under audit 🧐",
+  "KPI impact: Negative 📉",
+  "Management feedback: Try again 😎",
+  "This proposal passed all rounds except yours 😏",
+  "Board meeting adjourned due to NO 😂",
+  "This NO is not scalable 💡",
+  "Compliance says NO is optional 😌",
+  "Performance review pending for NO button 😜",
+  "System error: NO not supported ❌",
+  "Corporate says—Let’s circle back to YES 😎",
+  "Action item: Click YES ❤️",
+  "Final reminder before escalation 😌",
+  "Escalated to heart & soul department 🥺",
+  "Deadline crossed. Auto-approve YES 🎬",
+  "NO button fired. Notice period waived 😈"
+];
 
-    let count = 0;
+let count = 0;
+const noBtn = document.getElementById("noBtn");
+const quoteBox = document.getElementById("quote");
+const bgMusic = document.getElementById("bgMusic");
+const noSound = document.getElementById("noSound");
+const yesSound = document.getElementById("yesSound");
 
-    const noBtn = document.getElementById("noBtn");
-    const quoteBox = document.getElementById("quote");
-    const music = document.getElementById("bgMusic");
+function noClicked(){
+  bgMusic.play();
+  noSound.play();
 
-    function noClicked() {
-        music.play();
+  const jump = 100 + count * 12;
+  const x = Math.random() * jump - jump/2;
+  const y = Math.random() * jump - jump/2;
+  const rotate = Math.random() * 50 - 25;
 
-        const jump = 80 + count * 10;
-        const x = Math.random() * jump - jump / 2;
-        const y = Math.random() * jump - jump / 2;
-        const rotate = Math.random() * 30 - 15;
+  noBtn.style.transform =
+    `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
 
-    noBtn.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
+  quoteBox.innerText = quotes[count % quotes.length];
+  count++;
 
-        quoteBox.innerText = quotes[count % quotes.length];
-        count++;
+  if(count === 15){
+    noBtn.style.display = "none";
+    quoteBox.innerText =
+      "NO permanently disabled due to poor performance 😌💼";
+  }
+}
 
-        if (count === 10) {
-            noBtn.style.display = "none";
-            document.querySelector(".yes").style.boxShadow =
-                "0 0 25px white, 0 0 50px #ff1e56";
-            quoteBox.innerText =
-                "Picture ka climax aa gaya hai Bebu 🎬❤️ Ab sirf YES baaki hai 😌";
-        }
-    }
-
-    function yesClicked() {
-        music.play();
-        document.getElementById("proposal").classList.add("hidden");
-        document.getElementById("loveScreen").classList.remove("hidden");
-        document.getElementById("loveScreen").innerHTML += `
-            <p style="font-size:1.2em; margin-top:20px;">
-            “Ja Simran Ja… jee le apni Valentine’s Day” ❤️🎬
-            </p>
-        `;
-    }
+function yesClicked(){
+  bgMusic.play();
+  yesSound.play();
+  document.getElementById("proposal").classList.add("hidden");
+  document.getElementById("offerLetter").classList.remove("hidden");
+}
 </script>
 
 </body>
