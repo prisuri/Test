@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bebu 💕 Be My Valentine</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff4d6d, #ff85a1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .container {
+        background: rgba(255,255,255,0.15);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        max-width: 360px;
+        width: 90%;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 15px 28px;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .yes {
+        background: #ff1e56;
+        color: white;
+    }
+
+    .yes:hover {
+        transform: scale(1.1);
+    }
+
+    .no {
+        background: white;
+        color: #ff1e56;
+        position: absolute;
+    }
+
+    .quote {
+        margin-top: 25px;
+        font-size: 1.2em;
+        font-style: italic;
+        min-height: 60px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .heart {
+        font-size: 120px;
+        animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.25); }
+    }
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="proposal">
+    <h1>Sanskriti 💕</h1>
+    <p>Will you be my Valentine, Bebu? 🌸</p>
+
+    <button class="yes" onclick="yesClicked()">Yes 💖</button>
+    <button class="no" id="noBtn" onclick="noClicked()">No 🙈</button>
+
+    <div class="quote" id="quote"></div>
+</div>
+
+<div class="container hidden" id="loveScreen">
+    <div class="heart">❤️</div>
+    <h1>I LOVE YOU BEBU</h1>
+    <p>Forever & always 💘</p>
+</div>
+
+<script>
+    const quotes = [
+        "Acha… NO dabaya? Ek baar meri baat sun lo 🥺",
+        "Filmon mein heroine pehle mana karti hai 😏",
+        "Tumhaari muskaan ke liye thoda drama toh banta hai ❤️",
+        "Main perfect nahi hoon, par pyaar pura karta hoon 💕",
+        "Bebu… tumhaara ek YES meri poori duniya hai 🌍",
+        "Bas kar pagli… rulaayegi kya? 🥺💔",
+        "Tumhe manaane ka haq sirf mujhe hai 😌",
+        "Bas ek baar haan bol do… phir kabhi nahi poochunga 💖",
+        "Picture ka climax aa gaya hai 🎬❤️",
+        "Ab NO ka option officially bandh 😍"
+    ];
+
+    let count = 0;
+
+    const noBtn = document.getElementById("noBtn");
+    const quoteBox = document.getElementById("quote");
+    const music = document.getElementById("bgMusic");
+
+    function noClicked() {
+        music.play();
+
+        const jump = 80 + count * 10;
+        const x = Math.random() * jump - jump / 2;
+        const y = Math.random() * jump - jump / 2;
+        const rotate = Math.random() * 30 - 15;
+
+    noBtn.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
+
+        quoteBox.innerText = quotes[count % quotes.length];
+        count++;
+
+        if (count === 10) {
+            noBtn.style.display = "none";
+            document.querySelector(".yes").style.boxShadow =
+                "0 0 25px white, 0 0 50px #ff1e56";
+            quoteBox.innerText =
+                "Picture ka climax aa gaya hai Bebu 🎬❤️ Ab sirf YES baaki hai 😌";
+        }
+    }
+
+    function yesClicked() {
+        music.play();
+        document.getElementById("proposal").classList.add("hidden");
+        document.getElementById("loveScreen").classList.remove("hidden");
+        document.getElementById("loveScreen").innerHTML += `
+            <p style="font-size:1.2em; margin-top:20px;">
+            “Ja Simran Ja… jee le apni Valentine’s Day” ❤️🎬
+            </p>
+        `;
+    }
+</script>
+
+</body>
+</html>
